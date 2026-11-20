@@ -4,6 +4,7 @@ pipeline {
     environment {
         REGISTRY = "localhost:5000"
         IMAGE_NAME = "anil-demo-app"
+        PYTHON_PATH = "C:\Users\STUDENT\AppData\Local\Programs\Python\Python314\python.exe"
     }
 
     stages {
