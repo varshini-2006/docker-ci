@@ -1,11 +1,12 @@
+
 pipeline {
     agent any
 
-   environment {
-    REGISTRY = "localhost:5000"
-    IMAGE_NAME = "anil-demo-app"
-    PYTHON_PATH = "C:/Users/STUDENT/AppData/Local/Programs/Python/Python314/python.exe"
-}
+    environment {
+        REGISTRY = "localhost:5000"
+        IMAGE_NAME = "anil-demo-app"
+        PYTHON_PATH = "C:/Users/STUDENT/AppData/Local/Programs/Python/Python314/python.exe"
+    }
 
     stages {
         stage('1. Checkout Code') {
@@ -16,7 +17,7 @@ pipeline {
 
         stage('2. Application Build & Test') {
             steps {
-                bat 'python -m py_compile app.py'
+                bat '"%PYTHON_PATH%" -m py_compile app.py'
             }
         }
 
